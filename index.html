@@ -1,0 +1,1299 @@
+<!doctype html>
+<!--
+  ================================================================
+  IA x QA — Presentación Interactiva
+  "QA en la nueva era: Inteligencia Artificial aplicada a QA"
+  ================================================================
+
+  CÓMO EJECUTAR:
+  Opción 1: Abrir index.html directamente en el navegador.
+  Opción 2: Server local →  python3 -m http.server 8000
+             Luego abrir http://localhost:8000
+
+  NAVEGACIÓN:
+  →  / Space   = Siguiente slide
+  ←            = Slide anterior
+  Esc          = Vista overview (grid)
+  P            = Modo presenter (notas + timer)
+  H / ?        = Ayuda (atajos)
+  Home / End   = Primer / último slide
+  ================================================================
+-->
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Presentación: IA para QA en la nueva era — Interactiva, offline, con demos."
+    />
+    <title>IA x QA — QA en la nueva era</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDES VIEWPORT
+     ═══════════════════════════════════════════════════════════ -->
+    <main
+      class="slides-viewport"
+      role="region"
+      aria-label="Presentación: QA en la nueva era"
+    >
+      <!-- ── SLIDE 0: Título ── -->
+      <section class="slide slide--title" aria-hidden="true">
+        <span class="slide__tag">Marzo 2026</span>
+        <h1 class="slide__title">
+          QA en la <span class="slide__title--gradient">nueva era</span>
+        </h1>
+        <p class="slide__subtitle slide__subtitle--center">
+          Inteligencia Artificial aplicada a Quality Assurance
+        </p>
+      </section>
+
+      <!-- ── SLIDE 1: Contexto — Qué cambió ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Contexto</span>
+        <h2 class="slide__heading">¿Qué cambió en los últimos 2 años?</h2>
+        <ul class="slide__bullets">
+          <li>
+            <span class="bullet-highlight"
+              >GitHub Copilot, ChatGPT, Claude, Gemini</span
+            >
+            — de curiosidad a herramienta diaria
+          </li>
+          <li>
+            La IA genera código, tests, documentación y análisis
+            <span class="bullet-detail">En segundos, no horas</span>
+          </li>
+          <li>
+            La velocidad de entrega se aceleró — y el QA tiene que responder
+          </li>
+          <li>
+            No es hype pasajero: es una nueva capa de tooling que llegó para
+            quedarse
+          </li>
+        </ul>
+      </section>
+
+      <!-- ── SLIDE 2: Contexto — La IA genera todo ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Contexto</span>
+        <h2 class="slide__heading">La IA genera... todo (o casi)</h2>
+        <div class="slide__columns">
+          <div>
+            <h3 class="slide__subheading">Lo que puede hacer</h3>
+            <ul class="slide__bullets">
+              <li>Escribir código funcional desde un prompt</li>
+              <li>Generar test cases desde user stories</li>
+              <li>Analizar logs y sugerir root cause</li>
+              <li>Crear documentación y reportes</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="slide__subheading">Lo que NO puede hacer</h3>
+            <ul class="slide__bullets">
+              <li>Entender su negocio</li>
+              <li>Conocer a sus usuarios</li>
+              <li>Reemplazar su contexto y criterio</li>
+              <li>Decidir qué es "suficientemente bueno"</li>
+            </ul>
+          </div>
+        </div>
+        <p class="slide__text mt-2">
+          La pregunta correcta no es "¿me va a reemplazar?" sino
+          <strong class="text-cyan"
+            >"¿cómo la uso para ser más efectivo?"</strong
+          >
+        </p>
+      </section>
+
+      <!-- ── SLIDE 3: Evolución del rol QA ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Evolución</span>
+        <h2 class="slide__heading">Evolución del rol QA</h2>
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__label">Manual</div>
+            <div class="timeline__desc">Test plans, ejecución paso a paso</div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__label">Automation</div>
+            <div class="timeline__desc">Scripts, frameworks, CI/CD</div>
+          </div>
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__label">AI-Assisted</div>
+            <div class="timeline__desc">Copilot, generación, análisis</div>
+          </div>
+          <div class="timeline__item timeline__item--active">
+            <div class="timeline__dot"></div>
+            <div class="timeline__label">Orchestrator</div>
+            <div class="timeline__desc">Dirige IA + tools + criterio</div>
+          </div>
+        </div>
+        <p class="slide__text">
+          Cada fase <strong>agrega</strong>, no elimina. El criterio de testing
+          manual sigue siendo esencial.
+        </p>
+      </section>
+
+      <!-- ── SLIDE 4: Nuevo QA: Orquestador ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Evolución</span>
+        <h2 class="slide__heading">El nuevo QA: Orquestador</h2>
+        <div class="slide__columns">
+          <div>
+            <ul class="slide__bullets">
+              <li>
+                Define <span class="bullet-highlight">QUÉ probar</span> — la IA
+                ayuda con el CÓMO
+              </li>
+              <li>Es dueño de la estrategia de calidad</li>
+              <li>Evalúa y filtra el output de la IA</li>
+              <li>Conecta herramientas, agentes y procesos</li>
+              <li>Toma la decisión final: ¿esto sale o no?</li>
+            </ul>
+          </div>
+          <div>
+            <div class="quote-block">
+              Piense en un director de orquesta: no toca todos los instrumentos,
+              pero sabe cómo debe sonar la pieza completa.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 5: Mitos vs Realidades ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Mitos vs Realidades</span>
+        <h2 class="slide__heading">Lo que dicen vs lo que pasa</h2>
+        <div class="myth-reality">
+          <div class="myth-box">
+            <strong>Mito</strong>
+            "La IA va a reemplazar a los testers"
+          </div>
+          <div class="reality-box">
+            <strong>Realidad</strong>
+            Reemplaza tareas repetitivas, no criterio ni estrategia
+          </div>
+        </div>
+        <div class="myth-reality">
+          <div class="myth-box">
+            <strong>Mito</strong>
+            "Los tests que genera la IA están listos para producción"
+          </div>
+          <div class="reality-box">
+            <strong>Realidad</strong>
+            El output es un borrador, no un entregable — siempre requiere
+            revisión
+          </div>
+        </div>
+        <div class="myth-reality">
+          <div class="myth-box">
+            <strong>Mito</strong>
+            "Solo pego el prompt y listo"
+          </div>
+          <div class="reality-box">
+            <strong>Realidad</strong>
+            Sin contexto, la IA devuelve resultados genéricos e inutilizables
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 6: Más mitos ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Mitos vs Realidades</span>
+        <h2 class="slide__heading">Más mitos que hay que soltar</h2>
+        <div class="myth-reality">
+          <div class="myth-box">
+            <strong>Mito</strong>
+            "La IA entiende mi lógica de negocio"
+          </div>
+          <div class="reality-box">
+            <strong>Realidad</strong>
+            Solo sabe lo que le decís. Sin contexto, inventa (hallucina)
+          </div>
+        </div>
+        <div class="myth-reality">
+          <div class="myth-box">
+            <strong>Mito</strong>
+            "Más IA = mejor calidad"
+          </div>
+          <div class="reality-box">
+            <strong>Realidad</strong>
+            Malos prompts = malos resultados. Basura entra, basura sale
+          </div>
+        </div>
+        <div class="myth-reality">
+          <div class="myth-box">
+            <strong>Mito</strong>
+            "La IA elimina la necesidad de una estrategia de pruebas"
+          </div>
+          <div class="reality-box">
+            <strong>Realidad</strong>
+            Sin estrategia, generás tests sin dirección. La IA es una
+            herramienta, no una estrategia
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 7: 5 cosas que la IA hace mejor ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">IA como aliada</span>
+        <h2 class="slide__heading">5 cosas que la IA hace mejor que yo</h2>
+        <ul class="slide__bullets slide__bullets--numbered">
+          <li>
+            <span class="bullet-highlight"
+              >Generar test cases desde user stories</span
+            >
+            <span class="bullet-detail"
+              >En segundos, con cobertura amplia como primer borrador</span
+            >
+          </li>
+          <li>
+            <span class="bullet-highlight"
+              >Sugerir escenarios que no consideré</span
+            >
+            <span class="bullet-detail"
+              >La IA no tiene mis sesgos — piensa en edge cases distintos</span
+            >
+          </li>
+          <li>
+            <span class="bullet-highlight">Detectar gaps en cobertura</span>
+            <span class="bullet-detail"
+              >Peer review instantáneo de mi test plan</span
+            >
+          </li>
+        </ul>
+      </section>
+
+      <!-- ── SLIDE 8: 5 cosas (cont) ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">IA como aliada</span>
+        <h2 class="slide__heading">5 cosas (continuación)</h2>
+        <ul
+          class="slide__bullets slide__bullets--numbered"
+          style="counter-reset: bullet-counter 3"
+        >
+          <li>
+            <span class="bullet-highlight"
+              >Documentación y reportes repetitivos</span
+            >
+            <span class="bullet-detail"
+              >Bug reports, resúmenes de sprint, release notes — lo
+              tedioso</span
+            >
+          </li>
+          <li>
+            <span class="bullet-highlight"
+              >Acelerar automatización (scripts base)</span
+            >
+            <span class="bullet-detail"
+              >Genera el scaffold de un test en Playwright/Cypress en
+              segundos</span
+            >
+          </li>
+        </ul>
+        <div class="quote-block mt-3">
+          Clave: estas son tareas de <strong>asistencia</strong>. El criterio,
+          la validación y la decisión siguen siendo tuyas.
+        </div>
+      </section>
+
+      <!-- ── SLIDE 9: Donde falla ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Limitaciones reales</span>
+        <h2 class="slide__heading">Donde la IA falla (y falla feo)</h2>
+        <ul class="slide__bullets">
+          <li>
+            <span class="bullet-highlight">Redundancia y ruido:</span> genera 20
+            test cases donde 5 bastan
+            <span class="bullet-detail"
+              >Más no es mejor — el exceso de tests es un costo de
+              mantenimiento</span
+            >
+          </li>
+          <li>
+            <span class="bullet-highlight">Genérica sin contexto:</span> sin
+            instrucciones claras, da resultados insípidos
+            <span class="bullet-detail"
+              >El mismo prompt vago da el mismo resultado vacío</span
+            >
+          </li>
+          <li>
+            <span class="bullet-highlight"
+              >No entiende negocio como un humano:</span
+            >
+            no sabe que los viernes hay deploy freeze
+            <span class="bullet-detail"
+              >Las reglas implícitas de su equipo no existen para la IA</span
+            >
+          </li>
+          <li>
+            <span class="bullet-highlight"
+              >Siempre requiere revisión humana</span
+            >
+            <span class="bullet-detail"
+              >Puede generar tests que pasan pero no validan nada útil</span
+            >
+          </li>
+        </ul>
+        <div class="quote-block mt-2">
+          "El output es un borrador, no un entregable."
+        </div>
+      </section>
+
+      <!-- ── SLIDE 10: GenAI en STLC — Overview ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">GenAI en el STLC</span>
+        <h2 class="slide__heading">IA en cada fase del ciclo de testing</h2>
+        <p class="slide__text">
+          La IA no es solo "generar tests". Se integra en todo el STLC cuando se
+          usa con criterio.
+        </p>
+        <div class="stlc-flow">
+          <div class="stlc-flow__step">
+            <div class="stlc-flow__step-label">Requirements</div>
+            <div class="stlc-flow__step-sub">Ambigüedades + Test ideas</div>
+          </div>
+          <span class="stlc-flow__arrow">→</span>
+          <div class="stlc-flow__step">
+            <div class="stlc-flow__step-label">Planning</div>
+            <div class="stlc-flow__step-sub">Plan de pruebas + Riesgos</div>
+          </div>
+          <span class="stlc-flow__arrow">→</span>
+          <div class="stlc-flow__step">
+            <div class="stlc-flow__step-label">Design</div>
+            <div class="stlc-flow__step-sub">Cobertura + Edge cases</div>
+          </div>
+          <span class="stlc-flow__arrow">→</span>
+          <div class="stlc-flow__step">
+            <div class="stlc-flow__step-label">Execution</div>
+            <div class="stlc-flow__step-sub">Scripts + Debugging</div>
+          </div>
+          <span class="stlc-flow__arrow">→</span>
+          <div class="stlc-flow__step">
+            <div class="stlc-flow__step-label">Reporting</div>
+            <div class="stlc-flow__step-sub">Tickets + Resúmenes</div>
+          </div>
+        </div>
+        <p class="slide__text mt-2">
+          La clave: saber
+          <strong class="text-cyan">DÓNDE aporta valor</strong> y dónde solo
+          agrega ruido.
+        </p>
+      </section>
+
+      <!-- ── SLIDE 11: GenAI — Requirements & Planning ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">GenAI en el STLC</span>
+        <h2 class="slide__heading">Requirements y Planning</h2>
+        <div class="slide__columns">
+          <div>
+            <h3 class="slide__subheading">Requirements</h3>
+            <ul class="slide__bullets">
+              <li>Detectar ambigüedades en las historias de usuario</li>
+              <li>Generar preguntas para el PO/BA</li>
+              <li>Sugerir test ideas iniciales desde los ACs</li>
+              <li>Identificar dependencias y riesgos tempranos</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="slide__subheading">Planning</h3>
+            <ul class="slide__bullets">
+              <li>Proponer estructura del plan de pruebas</li>
+              <li>Identificar áreas de riesgo alto</li>
+              <li>Priorizar por impacto al negocio</li>
+              <li>Estimar esfuerzo inicial de testing</li>
+            </ul>
+          </div>
+        </div>
+        <p class="slide__text mt-2">
+          Excelente para el "first draft" que después usted refina con su
+          conocimiento del sistema.
+        </p>
+      </section>
+
+      <!-- ── SLIDE 12: GenAI — Design, Execution, Reporting ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">GenAI en el STLC</span>
+        <h2 class="slide__heading">Design, Execution y Reporting</h2>
+        <div class="slide__cards">
+          <div class="card">
+            <div class="card__title">Design</div>
+            <div class="card__text">
+              Análisis de cobertura, edge cases, valores límite, clases de
+              equivalencia, combinaciones. La IA detecta huecos que a usted se
+              le pasan.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__title">Execution</div>
+            <div class="card__text">
+              Genera scripts base (Playwright, Cypress), sugiere selectores,
+              datos de prueba y assertions. Ayuda a debuggear tests fallidos.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__title">Reporting</div>
+            <div class="card__text">
+              Genera bug tickets desde logs, resume resultados de ejecuciones,
+              crea summaries para stakeholders no técnicos.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 13: Selección de LLM ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Selección de LLM</span>
+        <h2 class="slide__heading">¿Qué modelo conviene para QA?</h2>
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Criterio</th>
+              <th>GPT-4o</th>
+              <th>Claude Opus/Sonnet</th>
+              <th>Gemini Pro</th>
+              <th>Modelos locales</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Precisión tests</td>
+              <td class="rating-high">Alta</td>
+              <td class="rating-high">Alta</td>
+              <td class="rating-mid">Media-Alta</td>
+              <td class="rating-mid">Media</td>
+            </tr>
+            <tr>
+              <td>Costo</td>
+              <td class="rating-mid">Medio</td>
+              <td class="rating-mid">Medio</td>
+              <td class="rating-high">Bajo</td>
+              <td class="rating-high">Gratis*</td>
+            </tr>
+            <tr>
+              <td>Privacidad</td>
+              <td class="rating-mid">API/Enterprise</td>
+              <td class="rating-mid">API/Enterprise</td>
+              <td class="rating-mid">API/Enterprise</td>
+              <td class="rating-high">Total</td>
+            </tr>
+            <tr>
+              <td>Contexto</td>
+              <td class="rating-high">128K</td>
+              <td class="rating-high">200K</td>
+              <td class="rating-high">1M+</td>
+              <td class="rating-low">8-32K</td>
+            </tr>
+            <tr>
+              <td>Velocidad</td>
+              <td class="rating-high">Rápido</td>
+              <td class="rating-mid">Medio</td>
+              <td class="rating-high">Rápido</td>
+              <td class="rating-low">Variable</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-muted mt-1" style="font-size: 0.8rem">
+          * Costo de hardware. La tabla es referencial — los modelos evolucionan
+          constantemente.
+        </p>
+      </section>
+
+      <!-- ── SLIDE 14: Reglas de decisión ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Selección de LLM</span>
+        <h2 class="slide__heading">Reglas de decisión</h2>
+        <ul class="slide__bullets">
+          <li>
+            <span class="bullet-highlight">Datos sensibles →</span> Modelo local
+            (Ollama) o API enterprise con DPA
+            <span class="bullet-detail"
+              >Nunca mandar datos reales de clientes a APIs públicas</span
+            >
+          </li>
+          <li>
+            <span class="bullet-highlight">Razonamiento complejo →</span> Modelo
+            grande (GPT-4o, Claude Opus)
+            <span class="bullet-detail"
+              >Para análisis profundo de specs, edge cases complejos</span
+            >
+          </li>
+          <li>
+            <span class="bullet-highlight">Alto volumen / bajo costo →</span>
+            Modelo menor (GPT-4o-mini, Haiku)
+            <span class="bullet-detail"
+              >Generación masiva de test data, templates repetitivos</span
+            >
+          </li>
+          <li>
+            <span class="bullet-highlight">Velocidad crítica →</span> Endpoints
+            optimizados o modelos edge
+            <span class="bullet-detail"
+              >Integración en CI/CD, feedback loops rápidos</span
+            >
+          </li>
+        </ul>
+        <p class="slide__text mt-2">
+          No es one-size-fits-all. La decisión depende del caso de uso.
+        </p>
+      </section>
+
+      <!-- ── SLIDE 15: Prompt Engineering ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Prompt Engineering</span>
+        <h2 class="slide__heading">Prompt + Context Engineering</h2>
+        <div class="slide__columns">
+          <div>
+            <p class="slide__text">
+              El <strong class="text-cyan">prompt es solo la mitad</strong>. El
+              CONTEXTO es lo que marca la diferencia entre un resultado genérico
+              y uno útil.
+            </p>
+            <h3 class="slide__subheading">Errores más comunes</h3>
+            <ul class="slide__bullets">
+              <li>Prompts vagos: "Genere tests para el login"</li>
+              <li>Sin contexto técnico: ¿qué framework? ¿qué DB?</li>
+              <li>Sin formato esperado: la IA elige cualquier formato</li>
+              <li>Sin ejemplos: no conoce su estándar de calidad</li>
+              <li>Sin restricciones: genera tests de todo tipo sin foco</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="slide__subheading">Tips para QA</h3>
+            <ul class="slide__bullets">
+              <li>Incluya siempre el rol: "Actúe como QA senior"</li>
+              <li>Describa la app y su stack técnico</li>
+              <li>Pegue los ACs textuales de la story</li>
+              <li>Especifique el formato: tabla, Gherkin, script</li>
+              <li>Pida que identifique gaps y ambigüedades</li>
+              <li>Itere: el primer resultado es un punto de partida</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 16: La fórmula ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Prompt Engineering</span>
+        <h2 class="slide__heading">La fórmula del buen prompt</h2>
+        <div class="formula-block">
+          <div class="formula-block__equation">
+            Objetivo + Contexto + Restricciones + Formato de salida + Ejemplos
+          </div>
+          <div class="formula-block__legend">
+            <span class="formula-block__item"
+              ><span class="formula-block__dot"></span> ¿Qué necesitás?</span
+            >
+            <span class="formula-block__item"
+              ><span
+                class="formula-block__dot"
+                style="background: var(--accent-cyan)"
+              ></span>
+              ¿De qué app/sistema?</span
+            >
+            <span class="formula-block__item"
+              ><span
+                class="formula-block__dot"
+                style="background: var(--accent-orange)"
+              ></span>
+              ¿Qué NO debe hacer?</span
+            >
+            <span class="formula-block__item"
+              ><span
+                class="formula-block__dot"
+                style="background: var(--accent-green)"
+              ></span>
+              ¿Cómo lo querés?</span
+            >
+            <span class="formula-block__item"
+              ><span
+                class="formula-block__dot"
+                style="background: var(--accent-red)"
+              ></span>
+              Mostrá un ejemplo</span
+            >
+          </div>
+        </div>
+        <p class="slide__text text-center mt-2">
+          No es magia, es ser específico. Vamos a verlo en acción...
+        </p>
+      </section>
+
+      <!-- ── SLIDE 17: DEMO — Prompt Builder ── -->
+      <section class="slide slide--demo" aria-hidden="true">
+        <span class="slide__tag">Demo interactivo</span>
+        <h2 class="slide__heading" style="margin-bottom: 0.8rem">
+          Prompt Builder para QA
+        </h2>
+        <div class="prompt-builder">
+          <!-- Form side -->
+          <div class="prompt-builder__form" id="pb-form">
+            <div>
+              <label class="demo-label" for="pb-userstory">User Story</label>
+              <textarea
+                class="demo-textarea"
+                id="pb-userstory"
+                rows="2"
+                placeholder="Como usuario quiero..."
+              >
+Como usuario quiero poder iniciar sesión con email y contraseña para acceder a mi cuenta personal.</textarea
+              >
+            </div>
+            <div>
+              <label class="demo-label" for="pb-acceptance"
+                >Criterios de Aceptación</label
+              >
+              <textarea
+                class="demo-textarea"
+                id="pb-acceptance"
+                rows="3"
+                placeholder="El sistema debe..."
+              >
+El login acepta email y contraseña.
+Muestra error si las credenciales son inválidas.
+Redirige al dashboard tras login exitoso.
+Bloquea cuenta tras 5 intentos fallidos.</textarea
+              >
+            </div>
+            <div>
+              <label class="demo-label" for="pb-context"
+                >Contexto (app, entorno, restricciones)</label
+              >
+              <input
+                class="demo-input"
+                id="pb-context"
+                type="text"
+                placeholder="React + Node.js, JWT..."
+                value="App web React + Node.js, autenticación JWT, PostgreSQL, deploy en AWS."
+              />
+            </div>
+            <div>
+              <label class="demo-label" for="pb-testtype"
+                >Tipo de Pruebas</label
+              >
+              <select class="demo-select" id="pb-testtype">
+                <option value="E2E">E2E (End-to-End)</option>
+                <option value="A11y">Accesibilidad (A11y)</option>
+                <option value="Performance">Performance</option>
+                <option value="API">API</option>
+                <option value="Security">Security</option>
+              </select>
+            </div>
+            <div class="demo-toggle">
+              <input
+                type="checkbox"
+                id="pb-toggle-specific"
+                aria-label="Toggle modo específico"
+              />
+              <label for="pb-toggle-specific"
+                >Más específico (prompt avanzado)</label
+              >
+            </div>
+            <div class="demo-btn-row">
+              <button
+                class="demo-btn demo-btn--primary"
+                id="pb-generate"
+                aria-label="Generar prompt"
+              >
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path
+                    d="M8 1v14M1 8h14"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                Generar Prompt
+              </button>
+              <button
+                class="demo-btn demo-btn--copy"
+                id="pb-copy"
+                aria-label="Copiar prompt generado"
+              >
+                Copiar
+              </button>
+            </div>
+          </div>
+          <!-- Output side -->
+          <div class="prompt-builder__output">
+            <div>
+              <label class="demo-label">Prompt generado</label>
+              <textarea
+                class="demo-textarea demo-textarea--output"
+                id="pb-output"
+                rows="10"
+                readonly
+                placeholder="Hacé click en 'Generar Prompt' para ver el resultado aquí..."
+              ></textarea>
+            </div>
+            <div>
+              <label class="demo-label">Ejemplo de salida (simulada)</label>
+              <div
+                id="pb-results"
+                style="
+                  display: none;
+                  max-height: 22vh;
+                  overflow-y: auto;
+                  background: var(--bg-card);
+                  border-radius: 8px;
+                  padding: 0.5rem;
+                "
+              ></div>
+              <p
+                class="text-muted"
+                style="font-size: 0.75rem"
+                id="pb-results-placeholder"
+              >
+                Generá el prompt para ver un ejemplo de test cases.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 18: Asistentes de código ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Herramientas</span>
+        <h2 class="slide__heading">
+          Asistentes de código: Copilot, Cursor, Windsurf
+        </h2>
+        <div class="slide__columns">
+          <div>
+            <h3 class="slide__subheading">Qué hacen bien</h3>
+            <ul class="slide__bullets">
+              <li>Autocompletar patrones de test conocidos</li>
+              <li>Generar scripts base desde comentarios</li>
+              <li>Sugerir assertions relevantes al contexto</li>
+              <li>Scaffolding de page objects y helpers</li>
+            </ul>
+            <p class="slide__text mt-1">
+              <span class="bullet-highlight">Aceleración realista:</span> 30-50%
+              en tareas repetitivas.
+            </p>
+          </div>
+          <div>
+            <h3 class="slide__subheading">Riesgos</h3>
+            <ul class="slide__bullets">
+              <li>Over-reliance: aceptar sin leer</li>
+              <li>Código que "parece bien" pero tiene bugs sutiles</li>
+              <li>Selectores frágiles o assertions débiles</li>
+              <li>Deuda técnica oculta en código generado</li>
+            </ul>
+            <div class="quote-block mt-1" style="font-size: 1rem">
+              Regla: revisá cada línea generada como si fuera de un junior.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 19: LLMs locales ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Herramientas</span>
+        <h2 class="slide__heading">LLMs locales: Ollama y cuándo convienen</h2>
+        <div class="slide__columns">
+          <div>
+            <h3 class="slide__subheading">Ventajas</h3>
+            <ul class="slide__bullets">
+              <li>
+                <span class="bullet-highlight">Privacidad total:</span> datos
+                nunca salen de tu máquina
+              </li>
+              <li>
+                <span class="bullet-highlight">Sin costos de API:</span> una vez
+                descargado, es gratis
+              </li>
+              <li>
+                <span class="bullet-highlight">Funciona offline:</span> aviones,
+                VPNs, redes restrictivas
+              </li>
+              <li>
+                <span class="bullet-highlight">Compliance friendly:</span> ideal
+                para regulaciones estrictas
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="slide__subheading">Trade-offs</h3>
+            <ul class="slide__bullets">
+              <li>Menos precisos que modelos cloud grandes</li>
+              <li>Requieren hardware decente (16GB+ RAM)</li>
+              <li>Ventanas de contexto más limitadas (8-32K)</li>
+              <li>Setup y mantenimiento adicional</li>
+            </ul>
+            <p class="slide__text mt-1">
+              <strong class="text-cyan">Cuándo usarlos:</strong> datos
+              sensibles, compliance estricto, prototipado rápido, ambientes
+              air-gapped.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 20: QA Agents ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Agentes</span>
+        <h2 class="slide__heading">QA Agents: ¿Qué son?</h2>
+        <p class="slide__text">
+          Un agente es más que una llamada a un LLM. Es un sistema que
+          <strong class="text-cyan">planifica, ejecuta, evalúa y ajusta</strong>
+          de forma autónoma.
+        </p>
+        <div class="stlc-flow mt-2">
+          <div class="stlc-flow__step">
+            <div class="stlc-flow__step-label">Recibe objetivo</div>
+            <div class="stlc-flow__step-sub">"Probá el checkout"</div>
+          </div>
+          <span class="stlc-flow__arrow">→</span>
+          <div class="stlc-flow__step">
+            <div class="stlc-flow__step-label">Planifica</div>
+            <div class="stlc-flow__step-sub">Descompone en pasos</div>
+          </div>
+          <span class="stlc-flow__arrow">→</span>
+          <div class="stlc-flow__step">
+            <div class="stlc-flow__step-label">Ejecuta</div>
+            <div class="stlc-flow__step-sub">Corre cada paso</div>
+          </div>
+          <span class="stlc-flow__arrow">→</span>
+          <div class="stlc-flow__step">
+            <div class="stlc-flow__step-label">Evalúa</div>
+            <div class="stlc-flow__step-sub">¿Pasó? ¿Falló?</div>
+          </div>
+          <span class="stlc-flow__arrow">→</span>
+          <div class="stlc-flow__step">
+            <div class="stlc-flow__step-label">Ajusta</div>
+            <div class="stlc-flow__step-sub">Reintenta o reporta</div>
+          </div>
+        </div>
+        <p class="slide__text mt-2">
+          No es un chatbot — es un worker autónomo
+          <strong>con supervisión</strong>. El QA define el objetivo y revisa el
+          resultado.
+        </p>
+      </section>
+
+      <!-- ── SLIDE 21: Agentes + MCPs ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Agentes</span>
+        <h2 class="slide__heading">Ejemplos de agentes + MCPs</h2>
+        <div class="slide__columns">
+          <div>
+            <h3 class="slide__subheading">Ejemplos de Agentes QA</h3>
+            <ul class="slide__bullets">
+              <li>
+                <span class="bullet-highlight">Agente Test Plan:</span> genera
+                plan desde specs del sprint
+              </li>
+              <li>
+                <span class="bullet-highlight">Agente Playwright:</span> escribe
+                y ejecuta tests E2E
+              </li>
+              <li>
+                <span class="bullet-highlight">Agente Autocorrección:</span>
+                arregla tests rotos automáticamente
+              </li>
+              <li>
+                <span class="bullet-highlight">Agente A11y:</span> audita
+                accesibilidad y genera reporte WCAG
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="slide__subheading">MCPs (Model Context Protocol)</h3>
+            <ul class="slide__bullets">
+              <li>
+                Estandarizan cómo los agentes acceden a herramientas externas
+              </li>
+              <li>Piense en APIs pero para agentes IA</li>
+              <li>Ejemplo: MCP para Jira, GitHub, Playwright, Jenkins</li>
+              <li>
+                Permiten que un agente lea tickets, ejecute tests, y publique
+                resultados
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 22: DEMO — Comparación Visual ── -->
+      <section class="slide slide--demo" aria-hidden="true">
+        <span class="slide__tag">Demo interactivo</span>
+        <h2 class="slide__heading" style="margin-bottom: 0.5rem">
+          Comparación Visual: IA en QA Visual
+        </h2>
+        <div class="image-compare">
+          <div class="image-compare__header">
+            <div>
+              <span class="image-compare__label">Baseline vs Candidate</span>
+            </div>
+            <div class="image-compare__slider-group">
+              <label for="ic-threshold">Diff threshold:</label>
+              <input
+                type="range"
+                class="image-compare__slider"
+                id="ic-threshold"
+                min="0"
+                max="100"
+                value="60"
+                aria-label="Ajustar threshold de diferencias"
+              />
+              <span
+                id="ic-threshold-val"
+                style="
+                  font-size: 0.8rem;
+                  color: var(--text-muted);
+                  min-width: 2.5em;
+                "
+                >60%</span
+              >
+            </div>
+            <button
+              class="demo-btn demo-btn--primary"
+              id="ic-detect"
+              aria-label="Detectar cambios"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <circle
+                  cx="7"
+                  cy="7"
+                  r="5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M11 11l4 4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Detectar cambios
+            </button>
+          </div>
+          <div class="image-compare__img-wrap">
+            <span
+              class="image-compare__label"
+              style="position: absolute; top: 8px; left: 10px; z-index: 2"
+              >Baseline</span
+            >
+            <img
+              src="assets/baseline.png"
+              alt="Screenshot baseline de la aplicación"
+              loading="lazy"
+            />
+          </div>
+          <div class="image-compare__img-wrap">
+            <span
+              class="image-compare__label"
+              style="position: absolute; top: 8px; left: 10px; z-index: 2"
+              >Candidate</span
+            >
+            <img
+              src="assets/candidate.png"
+              alt="Screenshot candidato con cambios"
+              loading="lazy"
+            />
+            <div class="image-compare__heatmap" id="ic-heatmap"></div>
+          </div>
+          <div class="image-compare__results" id="ic-results">
+            <div class="changes-list" id="ic-changes-list"></div>
+            <div class="qa-human-box" id="ic-qa-human"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 23: VibeCoding & VibeTesting ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Cultura</span>
+        <h2 class="slide__heading">VibeCoding y VibeTesting</h2>
+        <div class="slide__columns">
+          <div>
+            <ul class="slide__bullets">
+              <li>
+                <span class="bullet-highlight">VibeCoding:</span> escribir
+                código dejándose llevar por la IA sin estructura clara
+              </li>
+              <li>
+                <span class="bullet-highlight">VibeTesting:</span> lo mismo pero
+                para testing — "que la IA genere los tests"
+              </li>
+              <li>Suena cool, pero es riesgoso sin dirección</li>
+              <li>
+                La IA <strong>amplifica su dirección</strong> — si su dirección
+                es vaga, el resultado es vago
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="quote-block">
+              No es improvisación: es guiar con criterio. Defina QUÉ quiere
+              antes de pedírselo a la IA.
+            </div>
+            <ul class="slide__bullets mt-1">
+              <li>Tenga claro el objetivo antes de promptear</li>
+              <li>Defina criterios de aceptación del output</li>
+              <li>Itere: primer resultado → feedback → mejora</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 24: Guardrails ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Guardrails</span>
+        <h2 class="slide__heading">Guardrails y buenas prácticas</h2>
+        <div class="slide__columns">
+          <div>
+            <h3 class="slide__subheading">Reglas no negociables</h3>
+            <ul class="slide__bullets slide__bullets--numbered">
+              <li>
+                <span class="bullet-highlight">Always human review</span> —
+                nunca confiar ciegamente
+              </li>
+              <li>
+                <span class="bullet-highlight">Nunca datos sensibles</span> a
+                APIs públicas sin DPA
+              </li>
+              <li>
+                <span class="bullet-highlight"
+                  >Documentar qué fue asistido por IA</span
+                >
+                para auditoría
+              </li>
+              <li>
+                <span class="bullet-highlight"
+                  >Versionar prompts como código</span
+                >
+                — son activos del equipo
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="slide__subheading">Checklist antes de confiar</h3>
+            <ul class="slide__bullets">
+              <li>¿El test case es relevante para la feature?</li>
+              <li>¿Cubre el caso de uso REAL, no uno inventado?</li>
+              <li>¿Los datos de prueba son válidos?</li>
+              <li>¿Las assertions validan lo correcto?</li>
+              <li>¿Consideró escenarios negativos?</li>
+              <li>¿Corre sin modificaciones, o necesita ajustes?</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 25: Cierre ── -->
+      <section class="slide slide--closing" aria-hidden="true">
+        <span class="slide__tag">Cierre</span>
+        <h2 class="slide__heading">Conclusión</h2>
+        <div class="closing-lines">
+          <p>
+            "La IA no reemplaza a un QA.
+            <strong
+              >Reemplaza las horas que un QA desperdicia en tareas
+              mecánicas.</strong
+            >"
+          </p>
+          <p>
+            "La IA multiplica lo que usted ya sabe.
+            <strong
+              >Si sabe poco, multiplica poco. Si sabe mucho, es
+              imparable.</strong
+            >"
+          </p>
+        </div>
+        <p
+          class="slide__text mt-3"
+          style="
+            text-align: center;
+            max-width: 60ch;
+            margin-left: auto;
+            margin-right: auto;
+          "
+        >
+          El futuro del QA no es sin humanos — es con humanos potenciados que
+          usan IA como su herramienta más poderosa.
+        </p>
+      </section>
+
+      <!-- ── SLIDE 26: Q&A ── -->
+      <section class="slide slide--title qa-slide" aria-hidden="true">
+        <h2 class="slide__title">
+          Preguntas y <span class="slide__title--gradient">Discusión</span>
+        </h2>
+        <p class="slide__subtitle slide__subtitle--center mt-2">
+          ¿Qué herramienta probarías primero mañana?
+        </p>
+        <p class="text-muted mt-1" style="font-size: 0.9rem">
+          Gracias por su tiempo y atención.
+        </p>
+      </section>
+    </main>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     PROGRESS BAR
+     ═══════════════════════════════════════════════════════════ -->
+    <div
+      class="progress-bar"
+      id="progress-bar"
+      role="progressbar"
+      aria-label="Progreso de la presentación"
+    ></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     SLIDE COUNTER
+     ═══════════════════════════════════════════════════════════ -->
+    <div class="slide-counter" id="slide-counter" aria-live="polite">
+      1 / 27
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     HELP BUTTON
+     ═══════════════════════════════════════════════════════════ -->
+    <button
+      class="help-btn"
+      id="help-btn"
+      aria-label="Mostrar atajos de teclado"
+      title="Ayuda (H)"
+    >
+      ?
+    </button>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     HELP OVERLAY
+     ═══════════════════════════════════════════════════════════ -->
+    <div
+      class="overlay"
+      id="help-overlay"
+      role="dialog"
+      aria-label="Atajos de teclado"
+      aria-modal="true"
+    >
+      <div class="help-content">
+        <h2>Atajos de teclado</h2>
+        <div class="help-content__row">
+          <span class="help-content__key"><kbd>→</kbd> / <kbd>Space</kbd></span>
+          <span class="help-content__desc">Siguiente slide</span>
+        </div>
+        <div class="help-content__row">
+          <span class="help-content__key"><kbd>←</kbd></span>
+          <span class="help-content__desc">Slide anterior</span>
+        </div>
+        <div class="help-content__row">
+          <span class="help-content__key"><kbd>Esc</kbd></span>
+          <span class="help-content__desc">Vista overview (grid)</span>
+        </div>
+        <div class="help-content__row">
+          <span class="help-content__key"><kbd>P</kbd></span>
+          <span class="help-content__desc">Modo presenter</span>
+        </div>
+        <div class="help-content__row">
+          <span class="help-content__key"><kbd>H</kbd> / <kbd>?</kbd></span>
+          <span class="help-content__desc">Mostrar/ocultar ayuda</span>
+        </div>
+        <div class="help-content__row">
+          <span class="help-content__key"><kbd>Home</kbd></span>
+          <span class="help-content__desc">Primer slide</span>
+        </div>
+        <div class="help-content__row">
+          <span class="help-content__key"><kbd>End</kbd></span>
+          <span class="help-content__desc">Último slide</span>
+        </div>
+        <button class="help-close-btn" id="help-close">Cerrar</button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     OVERVIEW OVERLAY
+     ═══════════════════════════════════════════════════════════ -->
+    <div
+      class="overlay"
+      id="overview-overlay"
+      role="dialog"
+      aria-label="Vista general de slides"
+      aria-modal="true"
+    >
+      <div class="overview-grid" id="overview-grid"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+     PRESENTER PANEL
+     ═══════════════════════════════════════════════════════════ -->
+    <div
+      class="presenter-panel"
+      id="presenter-panel"
+      role="dialog"
+      aria-label="Modo presenter"
+    >
+      <div class="presenter-slide-preview">
+        <h3 id="presenter-slide-title">Slide actual</h3>
+        <div class="preview-content" id="presenter-slide-info">
+          Slide 1 de 27
+        </div>
+      </div>
+      <div class="presenter-notes-area">
+        <h4>Notas del Speaker</h4>
+        <div class="presenter-notes-text" id="presenter-notes-text">—</div>
+      </div>
+      <div class="presenter-controls">
+        <div class="presenter-timer" id="presenter-timer">00:00</div>
+        <div class="presenter-controls__btns">
+          <button
+            class="presenter-btn"
+            id="presenter-prev"
+            aria-label="Slide anterior"
+          >
+            ← Prev
+          </button>
+          <button
+            class="presenter-btn"
+            id="presenter-next"
+            aria-label="Siguiente slide"
+          >
+            Next →
+          </button>
+          <button
+            class="presenter-btn presenter-btn--primary"
+            id="presenter-timer-toggle"
+            aria-label="Iniciar/pausar timer"
+          >
+            Play/Pause
+          </button>
+          <button
+            class="presenter-btn"
+            id="presenter-timer-reset"
+            aria-label="Reiniciar timer"
+          >
+            Reset
+          </button>
+          <button
+            class="presenter-btn"
+            id="presenter-close"
+            aria-label="Cerrar modo presenter"
+          >
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+
+    <!-- Inline script: threshold value display for image compare -->
+    <script>
+      (function () {
+        var sl = document.getElementById("ic-threshold");
+        var val = document.getElementById("ic-threshold-val");
+        if (sl && val) {
+          sl.addEventListener("input", function () {
+            val.textContent = sl.value + "%";
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
