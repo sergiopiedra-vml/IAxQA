@@ -638,7 +638,28 @@
         </p>
       </section>
 
-      <!-- ── SLIDE 15: Prompt Engineering ── -->
+      <!-- ── SLIDE 15: Objetivos del taller ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Taller</span>
+        <h2 class="slide__heading">Objetivos del taller</h2>
+        <p class="slide__text">Al final de esta sesión usted podrá:</p>
+        <ul class="slide__bullets">
+          <li>
+            Construir prompts de QA claros y completos a partir de historias de
+            usuario reales.
+          </li>
+          <li>
+            Evaluar outputs de IA y decidir qué sirve, qué falta y qué debe
+            ajustar.
+          </li>
+          <li>
+            Llevarse al menos una plantilla de prompt que pueda usar mañana
+            mismo con su equipo.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ── SLIDE 16: Prompt Engineering ── -->
       <section class="slide slide--section" aria-hidden="true">
         <span class="slide__tag">Prompt Engineering</span>
         <h2 class="slide__heading">Prompt + Context Engineering</h2>
@@ -672,7 +693,7 @@
         </div>
       </section>
 
-      <!-- ── SLIDE 16: La fórmula ── -->
+      <!-- ── SLIDE 17: La fórmula ── -->
       <section class="slide slide--section" aria-hidden="true">
         <span class="slide__tag">Prompt Engineering</span>
         <h2 class="slide__heading">La fórmula del buen prompt</h2>
@@ -682,7 +703,7 @@
           </div>
           <div class="formula-block__legend">
             <span class="formula-block__item"
-              ><span class="formula-block__dot"></span> ¿Qué necesitás?</span
+              ><span class="formula-block__dot"></span> ¿Qué necesita?</span
             >
             <span class="formula-block__item"
               ><span
@@ -703,14 +724,14 @@
                 class="formula-block__dot"
                 style="background: var(--accent-green)"
               ></span>
-              ¿Cómo lo querés?</span
+              ¿Cómo lo quiere?</span
             >
             <span class="formula-block__item"
               ><span
                 class="formula-block__dot"
                 style="background: var(--accent-red)"
               ></span>
-              Mostrá un ejemplo</span
+              Muestre un ejemplo</span
             >
           </div>
         </div>
@@ -719,7 +740,48 @@
         </p>
       </section>
 
-      <!-- ── SLIDE 17: DEMO — Prompt Builder ── -->
+      <!-- ── SLIDE 18: Ejemplo guiado ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Ejemplo</span>
+        <h2 class="slide__heading">De un requerimiento a qué probar</h2>
+        <div class="slide__columns">
+          <div>
+            <h3 class="slide__subheading">Requerimiento (historia de usuario)</h3>
+            <p class="slide__text">
+              "Como cliente registrado quiero poder cambiar mi contraseña desde
+              el perfil para mantener segura mi cuenta."
+            </p>
+            <h3 class="slide__subheading mt-1">Prompt a la IA</h3>
+            <p class="slide__text" style="font-size: 0.9rem">
+              "Actúe como QA senior. A partir de esta historia de usuario y sus
+              criterios de aceptación, identifique qué áreas deberían probarse:
+              flujos principales, errores, seguridad, UX y edge cases. Resuma en
+              bullets qué probaría y por qué." 
+            </p>
+          </div>
+          <div>
+            <h3 class="slide__subheading">Qué nos ayuda a ver la IA</h3>
+            <ul class="slide__bullets">
+              <li>Flujos básicos: cambio exitoso y confirmación.</li>
+              <li>Errores: contraseña actual incorrecta, campos vacíos.</li>
+              <li>
+                Seguridad: política de complejidad, intentos fallidos, enlaces
+                de reset expiran.
+              </li>
+              <li>
+                UX: mensajes claros, accesibilidad del formulario,
+                comportamiento en mobile.
+              </li>
+              <li>
+                Edge cases: sesión expirada, múltiples pestañas abiertas,
+                usuario bloqueado.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 19: DEMO — Prompt Builder ── -->
       <section class="slide slide--demo" aria-hidden="true">
         <span class="slide__tag">Demo interactivo</span>
         <h2 class="slide__heading" style="margin-bottom: 0.8rem">
@@ -823,7 +885,7 @@ Bloquea cuenta tras 5 intentos fallidos.</textarea
                 id="pb-output"
                 rows="10"
                 readonly
-                placeholder="Hacé click en 'Generar Prompt' para ver el resultado aquí..."
+                placeholder="Haga clic en 'Generar Prompt' para ver el resultado aquí..."
               ></textarea>
             </div>
             <div>
@@ -844,7 +906,7 @@ Bloquea cuenta tras 5 intentos fallidos.</textarea
                 style="font-size: 0.75rem"
                 id="pb-results-placeholder"
               >
-                Generá el prompt para ver un ejemplo de test cases.
+                Genere el prompt para ver un ejemplo de test cases.
               </p>
             </div>
           </div>
@@ -1162,7 +1224,35 @@ Bloquea cuenta tras 5 intentos fallidos.</textarea
         </div>
       </section>
 
-      <!-- ── SLIDE 23: VibeCoding & VibeTesting ── -->
+      <!-- ── SLIDE 23: Ejercicio 2 ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Taller</span>
+        <h2 class="slide__heading">Ejercicio 2: Del resultado a la decisión</h2>
+        <p class="slide__text">
+          Use los resultados del performance test y el análisis de IA para
+          practicar criterio de QA:
+        </p>
+        <ul class="slide__bullets">
+          <li>
+            Marque 2 hallazgos que reportaría como bug o incidente crítico (y
+            por qué).
+          </li>
+          <li>
+            Identifique 1 hallazgo que dejaría pasar por ahora y justifique su
+            decisión.
+          </li>
+          <li>
+            Seleccione 1 caso donde pediría más contexto a producto o
+            infraestructura.
+          </li>
+          <li>
+            Defina qué evidencia adicional necesitaría antes de tomar una
+            decisión final.
+          </li>
+        </ul>
+      </section>
+
+      <!-- ── SLIDE 24: VibeCoding & VibeTesting ── -->
       <section class="slide slide--section" aria-hidden="true">
         <span class="slide__tag">Cultura</span>
         <h2 class="slide__heading">VibeCoding y VibeTesting</h2>
@@ -1278,7 +1368,34 @@ Bloquea cuenta tras 5 intentos fallidos.</textarea
         </p>
       </section>
 
-      <!-- ── SLIDE 26: Q&A ── -->
+      <!-- ── SLIDE 26: Mañana mismo ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Cierre</span>
+        <h2 class="slide__heading">Mañana mismo: próximos pasos</h2>
+        <p class="slide__text">
+          Para que esta sesión no quede solo en teoría, elija al menos una
+          acción concreta para mañana:
+        </p>
+        <ul class="slide__bullets">
+          <li>
+            Usar la plantilla de prompt en una historia real de su equipo.
+          </li>
+          <li>
+            Documentar una decisión donde la IA ayudó pero usted tomó la
+            decisión final.
+          </li>
+          <li>
+            Compartir con su equipo un buen prompt o práctica que haya aprendido
+            hoy.
+          </li>
+        </ul>
+        <p class="slide__text mt-2">
+          Pequeños cambios de hábito, repetidos cada sprint, tienen más impacto
+          que una herramienta nueva.
+        </p>
+      </section>
+
+      <!-- ── SLIDE 27: Q&A ── -->
       <section class="slide slide--title qa-slide" aria-hidden="true">
         <h2 class="slide__title">
           Preguntas y <span class="slide__title--gradient">Discusión</span>
