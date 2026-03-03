@@ -15,28 +15,29 @@ var SLIDES_META = [
     { id: 2, tag: 'Contexto', title: 'La IA genera… todo (o casi)', speakerNotes: 'La IA puede generar código, tests, documentación, análisis de logs, reportes. Pero NO entiende su negocio, sus usuarios ni su contexto. La pregunta no es "me va a reemplazar" sino "cómo usarla para ser más efectivo". Ahí es donde entra el criterio humano.' },
     { id: 3, tag: 'Evolución', title: 'Evolución del rol QA', speakerNotes: 'El rol QA siempre ha evolucionado. De manual a automation, y ahora a AI-assisted. Cada fase agrega herramientas, no elimina lo anterior. Todavía se necesita criterio para testing manual, skills de automation, y ahora sumar skills de IA. No es una u otra — es acumulativo.' },
     { id: 4, tag: 'Evolución', title: 'El nuevo QA: Orquestador', speakerNotes: 'El QA del futuro cercano es un orquestador: define QUÉ probar, la IA ayuda con el CÓMO. Pero el QA sigue siendo dueño de la estrategia, los criterios de calidad, y la decisión final. Piense en un director de orquesta — no toca todos los instrumentos, pero sabe cómo debe sonar la pieza completa.' },
-    { id: 5, tag: 'Mitos vs Realidades', title: 'Lo que dicen vs lo que pasa', speakerNotes: 'Vamos a derribar algunos mitos. "La IA reemplaza testers" — No, reemplaza tareas repetitivas. "Los tests de IA son production-ready" — No, el output es un borrador. "Solo pego y corro" — se necesita contexto, revisión y criterio.' },
-    { id: 6, tag: 'Mitos vs Realidades', title: 'Más mitos que hay que soltar', speakerNotes: 'La IA no conoce su negocio — solo sabe lo que usted le dice. Más IA no significa mejor calidad — malos prompts dan malos resultados. Y nunca elimina la necesidad de una estrategia de pruebas. La IA es una herramienta, no una estrategia.' },
-    { id: 7, tag: 'IA como aliada', title: '5 cosas que la IA hace mejor que yo', speakerNotes: 'Aquí van 5 áreas donde la IA genuinamente ayuda más que un humano solo. No es fanboy talk — son casos reales donde el ROI es medible. Generar casos de prueba desde user stories es el caso de uso #1 más práctico. Sugerir escenarios que usted no consideró es el #2 más valioso — la IA no tiene sus sesgos.' },
-    { id: 8, tag: 'IA como aliada', title: '5 cosas (continuación)', speakerNotes: 'Detectar gaps en cobertura funciona como un peer review instantáneo. Documentación repetitiva — nadie quiere escribir el quinto reporte del sprint. Y acelerar automatización generando scripts base ahorra horas. Clave: son tareas de ASISTENCIA. El criterio sigue siendo tuyo.' },
-    { id: 9, tag: 'Limitaciones reales', title: 'Donde la IA falla (y falla feo)', speakerNotes: 'Ahora lo que NO funciona. Redundancia: genera 20 test cases donde 5 bastan. Sin contexto es genérica e inútil. No entiende reglas de negocio complejas. Y siempre — siempre — requiere revisión humana. La frase clave: "El output es un borrador, no un entregable." Grabenla.' },
-    { id: 10, tag: 'GenAI en el STLC', title: 'IA en cada fase del ciclo', speakerNotes: 'Vamos a ver cómo la IA se integra en cada fase del Software Testing Life Cycle. No es solo "generar tests" — entra desde requirements hasta reporting. La clave es saber DÓNDE aporta valor real y dónde solo agrega ruido.' },
-    { id: 11, tag: 'GenAI en el STLC', title: 'Requirements y Planning', speakerNotes: 'En requirements: detectar ambigüedades, generar preguntas al PO, sugerir test ideas iniciales. En planning: proponer estructura de plan de pruebas, identificar áreas de riesgo, priorizar por impacto. Excelente para el "first draft" que después usted refina.' },
-    { id: 12, tag: 'GenAI en el STLC', title: 'Design, Execution y Reporting', speakerNotes: 'En design: análisis de cobertura, edge cases, valores límite, combinaciones. En execution: generar scripts base (Playwright, Cypress), sugerir selectores, datos, assertions. Incluso debugging de tests fallidos. En reporting: generar tickets desde logs, resumir resultados, crear summaries para stakeholders.' },
-    { id: 13, tag: 'Selección de LLM', title: '¿Qué modelo conviene para QA?', speakerNotes: 'No todos los modelos son iguales para QA. Usted necesita evaluar: precisión (qué tan buenos son los tests generados), costo (tokens, suscripción), privacidad (datos sensibles, compliance), velocidad y ventana de contexto (cuánto código/spec puede enviar). Esta matriz ayuda a decidir.' },
-    { id: 14, tag: 'Selección de LLM', title: 'Reglas de decisión', speakerNotes: 'Reglas simples: datos sensibles -> modelo local o API enterprise con DPA. Razonamiento complejo -> modelo grande (GPT-4, Claude Opus). Alto volumen / bajo costo -> modelo menor (GPT-4o-mini, Haiku). Velocidad crítica -> endpoints optimizados o modelos edge. No es one-size-fits-all.' },
-    { id: 15, tag: 'Prompt Engineering', title: 'Prompt + Context Engineering', speakerNotes: 'El prompt es solo la mitad. El CONTEXTO es lo que hace la diferencia entre un resultado genérico y uno útil. ¿Qué app es? ¿Qué tecnología? ¿Qué restricciones? ¿Qué formato de salida necesitás? Los errores más comunes: prompts vagos, sin contexto, sin formato esperado, sin ejemplos.' },
-    { id: 16, tag: 'Prompt Engineering', title: 'La fórmula del buen prompt', speakerNotes: 'La fórmula: Objetivo + Contexto + Restricciones + Formato de salida + Ejemplos. No es magia — es ser específico. Vamos a verlo en acción con el demo.' },
-    { id: 17, tag: 'Demo', title: 'Demo: Prompt Builder', speakerNotes: 'Demo interactivo. Vamos a construir un prompt para QA paso a paso. Pueden ver cómo cambia el resultado según el contexto que le demos. Noten la diferencia entre un prompt genérico y uno específico.', interactiveType: 'prompt-builder' },
-    { id: 18, tag: 'Herramientas', title: 'Asistentes de código: Copilot e IDE', speakerNotes: 'Copilot, Cursor, Windsurf — asistentes de código en el IDE. Para QA: generan scripts de test, sugieren assertions, autocompletan patrones. Aceleración realista: 30-50% en tareas repetitivas. Riesgos: over-reliance, código que "parece bien" pero tiene bugs sutiles. Siempre revisar.' },
-    { id: 19, tag: 'Herramientas', title: 'LLMs locales: Ollama y cuándo convienen', speakerNotes: 'Ollama, LM Studio, llama.cpp — modelos que corren en su máquina. Ventajas: privacidad total, sin costos de API, funciona offline, compliance friendly. Desventajas: menos precisos que modelos cloud, requieren hardware decente, modelos más limitados. Cuándo convienen: datos sensibles, políticas estrictas, prototipado rápido.' },
-    { id: 20, tag: 'Agentes', title: 'QA Agents: ¿Qué son?', speakerNotes: 'Un agente es más que un LLM: planifica, ejecuta, evalúa y ajusta. Loop: recibe objetivo -> descompone en pasos -> ejecuta cada paso -> evalúa resultado -> ajusta si falla. No es un chatbot — es un worker autónomo con supervisión. Para QA: puede planificar tests, ejecutarlos, y reportar — con su supervisión.' },
-    { id: 21, tag: 'Agentes', title: 'Ejemplos de agentes + MCPs', speakerNotes: 'Ejemplos: agente que genera plan de pruebas desde specs, agente Playwright que escribe y ejecuta tests E2E, agente de autocorrección que arregla tests rotos, agente de a11y que audita automáticamente. MCPs (Model Context Protocols): estandarizan cómo los agentes acceden a herramientas externas. Piensen en APIs pero para agentes IA.' },
-    { id: 22, tag: 'Demo', title: 'Demo: Comparación Visual', speakerNotes: 'Demo de visual testing con IA. Vamos a comparar dos screenshots y ver cómo detecta cambios. Noten el slider de threshold y cómo un QA humano completaría el análisis.', interactiveType: 'image-compare' },
-    { id: 23, tag: 'Cultura', title: 'VibeCoding y VibeTesting', speakerNotes: 'VibeCoding: escribir código dejándose llevar por la IA sin estructura. VibeTesting: lo mismo pero para testing. Suena cool, pero es riesgoso. No es improvisación: es guiar con criterio. Use la IA, pero con intención. Defina qué quiere antes de pedirlo. La IA amplifica su dirección — asegúrese de que su dirección sea buena.' },
-    { id: 24, tag: 'Guardrails', title: 'Guardrails y buenas prácticas', speakerNotes: 'Las reglas no negociables: 1) Always human review — nunca confiar ciegamente. 2) Checklist antes de confiar: ¿el test es relevante? ¿cubre el caso real? ¿usa datos válidos? 3) Nunca mandar datos sensibles a APIs públicas. 4) Documentar qué fue asistido por IA. 5) Versionar prompts como código.' },
-    { id: 25, tag: 'Cierre', title: 'Conclusión', speakerNotes: 'Estas dos frases resumen todo: "La IA no reemplaza a un QA. Reemplaza las horas que un QA desperdicia en tareas mecánicas." Y "La IA multiplica lo que usted ya sabe. Si sabe poco, multiplica poco. Si sabe mucho, es imparable." El futuro del QA no es sin humanos — es con humanos potenciados.' },
-    { id: 26, tag: '', title: 'Preguntas y Discusión', speakerNotes: 'Abrir espacio para preguntas. Temas sugeridos si no hay preguntas: ¿Qué herramienta probarían primero mañana? ¿Cuál es el mayor blocker para adoptar IA en su equipo? ¿Cómo manejan datos sensibles actualmente?' }
+    { id: 5, tag: 'Evolución', title: '¿Qué se espera de un QA en 2026?', speakerNotes: 'Analizamos 12 vacantes reales de empresas tech en LinkedIn, Lever y Greenhouse (Feb-Mar 2026). Resultado: automation es piso (12/12), CI/CD casi universal (11/12), 9 de 12 piden experiencia con IA/LLM tools, y 6 incluyen skills de Docker/K8s/infra. Testing manual aparece solo en 2 como nice-to-have. El título ya no es Tester, es QA Engineer o SDET. El mensaje: el QA de 2026 es un engineer que testea, no un tester que programa.' },
+    { id: 6, tag: 'Mitos vs Realidades', title: 'Lo que dicen vs lo que pasa', speakerNotes: 'Vamos a derribar algunos mitos. "La IA reemplaza testers" — No, reemplaza tareas repetitivas. "Los tests de IA son production-ready" — No, el output es un borrador. "Solo pego y corro" — se necesita contexto, revisión y criterio.' },
+    { id: 7, tag: 'Mitos vs Realidades', title: 'Más mitos que hay que soltar', speakerNotes: 'La IA no conoce su negocio — solo sabe lo que usted le dice. Más IA no significa mejor calidad — malos prompts dan malos resultados. Y nunca elimina la necesidad de una estrategia de pruebas. La IA es una herramienta, no una estrategia.' },
+    { id: 8, tag: 'IA como aliada', title: '5 cosas que la IA hace mejor que yo', speakerNotes: 'Aquí van 5 áreas donde la IA genuinamente ayuda más que un humano solo. No es fanboy talk — son casos reales donde el ROI es medible. Generar casos de prueba desde user stories es el caso de uso #1 más práctico. Sugerir escenarios que usted no consideró es el #2 más valioso — la IA no tiene sus sesgos.' },
+    { id: 9, tag: 'IA como aliada', title: '5 cosas (continuación)', speakerNotes: 'Detectar gaps en cobertura funciona como un peer review instantáneo. Documentación repetitiva — nadie quiere escribir el quinto reporte del sprint. Y acelerar automatización generando scripts base ahorra horas. Clave: son tareas de ASISTENCIA. El criterio sigue siendo tuyo.' },
+    { id: 10, tag: 'Limitaciones reales', title: 'Donde la IA falla (y falla feo)', speakerNotes: 'Ahora lo que NO funciona. Redundancia: genera 20 test cases donde 5 bastan. Sin contexto es genérica e inútil. No entiende reglas de negocio complejas. Y siempre — siempre — requiere revisión humana. La frase clave: "El output es un borrador, no un entregable." Grabenla.' },
+    { id: 11, tag: 'GenAI en el STLC', title: 'IA en cada fase del ciclo', speakerNotes: 'Vamos a ver cómo la IA se integra en cada fase del Software Testing Life Cycle. No es solo "generar tests" — entra desde requirements hasta reporting. La clave es saber DÓNDE aporta valor real y dónde solo agrega ruido.' },
+    { id: 12, tag: 'GenAI en el STLC', title: 'Requirements y Planning', speakerNotes: 'En requirements: detectar ambigüedades, generar preguntas al PO, sugerir test ideas iniciales. En planning: proponer estructura de plan de pruebas, identificar áreas de riesgo, priorizar por impacto. Excelente para el "first draft" que después usted refina.' },
+    { id: 13, tag: 'GenAI en el STLC', title: 'Design, Execution y Reporting', speakerNotes: 'En design: análisis de cobertura, edge cases, valores límite, combinaciones. En execution: generar scripts base (Playwright, Cypress), sugerir selectores, datos, assertions. Incluso debugging de tests fallidos. En reporting: generar tickets desde logs, resumir resultados, crear summaries para stakeholders.' },
+    { id: 14, tag: 'Selección de LLM', title: '¿Qué modelo conviene para QA?', speakerNotes: 'No todos los modelos son iguales para QA. Usted necesita evaluar: precisión (qué tan buenos son los tests generados), costo (tokens, suscripción), privacidad (datos sensibles, compliance), velocidad y ventana de contexto (cuánto código/spec puede enviar). Esta matriz ayuda a decidir.' },
+    { id: 15, tag: 'Selección de LLM', title: 'Reglas de decisión', speakerNotes: 'Reglas simples: datos sensibles -> solo vía WPP Open que tiene GPT-5.2, Claude y Gemini con filtros de seguridad enterprise. En VML nunca usamos APIs públicas directas con datos de clientes. Razonamiento complejo -> modelo grande (GPT-5.2, Claude Opus 4.6). Alto volumen / bajo costo -> modelo menor (GPT-4o-mini, Haiku). Ojo: Opus 4.6 consume ×3 vs Sonnet, usarlo solo cuando el razonamiento lo justifique. Velocidad crítica -> endpoints optimizados o modelos edge. No es one-size-fits-all.' },
+    { id: 16, tag: 'Prompt Engineering', title: 'Prompt + Context Engineering', speakerNotes: 'El prompt es solo la mitad. El CONTEXTO es lo que hace la diferencia entre un resultado genérico y uno útil. ¿Qué app es? ¿Qué tecnología? ¿Qué restricciones? ¿Qué formato de salida necesitás? Los errores más comunes: prompts vagos, sin contexto, sin formato esperado, sin ejemplos.' },
+    { id: 17, tag: 'Prompt Engineering', title: 'La fórmula del buen prompt', speakerNotes: 'La fórmula: Objetivo + Contexto + Restricciones + Formato de salida + Ejemplos. No es magia — es ser específico. Vamos a verlo en acción con el demo.' },
+    { id: 18, tag: 'Demo', title: 'Demo: Prompt Builder', speakerNotes: 'Demo interactivo. Vamos a construir un prompt para QA paso a paso. Pueden ver cómo cambia el resultado según el contexto que le demos. Noten la diferencia entre un prompt genérico y uno específico.', interactiveType: 'prompt-builder' },
+    { id: 19, tag: 'Herramientas', title: 'Asistentes de código: Copilot e IDE', speakerNotes: 'Copilot, Cursor, Windsurf — asistentes de código en el IDE. Para QA: generan scripts de test, sugieren assertions, autocompletan patrones. Aceleración realista: 30-50% en tareas repetitivas. Riesgos: over-reliance, código que "parece bien" pero tiene bugs sutiles. Siempre revisar.' },
+    { id: 20, tag: 'Herramientas', title: 'LLMs locales: Ollama y cuándo convienen', speakerNotes: 'Ollama, LM Studio, llama.cpp — modelos que corren en su máquina. Ventajas: privacidad total, sin costos de API, funciona offline, compliance friendly. Desventajas: menos precisos que modelos cloud, requieren hardware decente, modelos más limitados. Cuándo convienen: prototipado rápido, ambientes air-gapped. Nota: en VML para datos sensibles nuestra opción principal es WPP Open, que ya integra GPT-5.2, Claude y Gemini con filtros de seguridad enterprise.' },
+    { id: 21, tag: 'Agentes', title: 'QA Agents: ¿Qué son?', speakerNotes: 'Un agente es más que un LLM: planifica, ejecuta, evalúa y ajusta. Loop: recibe objetivo -> descompone en pasos -> ejecuta cada paso -> evalúa resultado -> ajusta si falla. No es un chatbot — es un worker autónomo con supervisión. Para QA: puede planificar tests, ejecutarlos, y reportar — con su supervisión.' },
+    { id: 22, tag: 'Agentes', title: 'Ejemplos de agentes + MCPs', speakerNotes: 'Ejemplos: agente que genera plan de pruebas desde specs, agente Playwright que escribe y ejecuta tests E2E, agente de autocorrección que arregla tests rotos, agente de a11y que audita automáticamente. MCPs (Model Context Protocols): estandarizan cómo los agentes acceden a herramientas externas. Piensen en APIs pero para agentes IA.' },
+    { id: 23, tag: 'Demo', title: 'Demo: Interpretador de Performance', speakerNotes: 'Demo de interpretación de resultados de performance test con IA. Estos son datos reales de un JMeter test. La IA no solo lee los números — interpreta patrones, correlaciona métricas y sugiere acciones concretas. Pero siempre necesitamos al QA para validar el contexto.', interactiveType: 'perf-interpreter' },
+    { id: 24, tag: 'Cultura', title: 'VibeCoding y VibeTesting', speakerNotes: 'VibeCoding: escribir código dejándose llevar por la IA sin estructura. VibeTesting: lo mismo pero para testing. Suena cool, pero es riesgoso. No es improvisación: es guiar con criterio. Use la IA, pero con intención. Defina qué quiere antes de pedirlo. La IA amplifica su dirección — asegúrese de que su dirección sea buena.' },
+    { id: 25, tag: 'Guardrails', title: 'Guardrails y buenas prácticas', speakerNotes: 'Las reglas no negociables: 1) Always human review — nunca confiar ciegamente. 2) Checklist antes de confiar: ¿el test es relevante? ¿cubre el caso real? ¿usa datos válidos? 3) Datos sensibles solo vía WPP Open — nunca APIs públicas directas. 4) Documentar qué fue asistido por IA. 5) Versionar prompts como código.' },
+    { id: 26, tag: 'Cierre', title: 'Conclusión', speakerNotes: 'Estas dos frases resumen todo: "La IA no reemplaza a un QA. Reemplaza las horas que un QA desperdicia en tareas mecánicas." Y "La IA multiplica lo que usted ya sabe. Si sabe poco, multiplica poco. Si sabe mucho, es imparable." El futuro del QA no es sin humanos — es con humanos potenciados.' },
+    { id: 27, tag: '', title: 'Preguntas y Discusión', speakerNotes: 'Abrir espacio para preguntas. Temas sugeridos si no hay preguntas: ¿Qué herramienta probarían primero mañana? ¿Cuál es el mayor blocker para adoptar IA en su equipo? ¿Cómo manejan datos sensibles actualmente?' }
 ];
 
 var TOTAL_SLIDES = SLIDES_META.length;
@@ -362,93 +363,80 @@ function showCopyFeedback() {
 }
 
 /* ──────────────────────────────────────────────────
-   10. DEMO: IMAGE COMPARISON
+   10. DEMO: PERFORMANCE TEST INTERPRETER
    ────────────────────────────────────────────────── */
-var DETECTED_CHANGES = [
-    { text: 'Color del botón principal cambió de azul (#0ea5e9) a naranja (#f97316)', severity: 'high', recommendation: 'Validar en guía de estilos, verificar a11y contrast ratio', x: 82, y: 93, size: 60 },
-    { text: 'Texto del botón cambió de "Enviar Reporte" a "Submit Report" (idioma)', severity: 'high', recommendation: 'Verificar i18n/l10n, posible regression en localización', x: 84, y: 94, size: 50 },
-    { text: 'Barra de progreso: color cambió de cian a amarillo, porcentaje de 73% a 67%', severity: 'medium', recommendation: 'Verificar lógica de cálculo de cobertura, revisar data source', x: 83, y: 28, size: 55 },
-    { text: 'Nav item "Config" cambió a "Settings"', severity: 'low', recommendation: 'Verificar consistencia de idioma en toda la app', x: 75, y: 4, size: 40 },
-    { text: 'Estado TC-003 cambió de "Fallido" a "Pasado"', severity: 'medium', recommendation: 'Verificar si el fix fue real o si es un falso positivo en el reporte', x: 70, y: 62, size: 50 },
-    { text: 'Badge "Sistema OK" movido verticalmente ~7px arriba', severity: 'low', recommendation: 'Revisar en responsive, verificar layout shift metrics', x: 30, y: 92, size: 35 }
+var PERF_FINDINGS = [
+    { title: 'Cuello de botella en CPU', severity: 'high', detail: 'CPU al 89% con solo 100 usuarios indica un proceso bloqueante. Probable causa: queries N+1 o serialización síncrona pesada en el endpoint /checkout. El P99 de 8.9s confirma saturación.' },
+    { title: 'Memory leak probable', severity: 'high', detail: 'Memoria en 80% (3.2/4 GB) con carga moderada. En un test de 5 min esto sugiere que no se están liberando objetos correctamente. En producción con carga sostenida, esto termina en OOM.' },
+    { title: 'Connection pool agotado', severity: 'high', detail: '347 conexiones rechazadas = el pool de conexiones a DB/servicio externo se agotó. El throughput de 42 req/s (vs 80 esperado) correlaciona directamente: las requests quedan encoladas esperando conexión.' },
+    { title: 'Error rate fuera de SLA', severity: 'high', detail: '12.3% error rate vs 1% SLA. Probablemente los errores son timeouts (correlaciona con P99 de 8.9s) y connection refused. Los 12% de errores son síntoma, no causa.' },
+    { title: 'Degradación no lineal', severity: 'medium', detail: 'La diferencia entre Avg (1.8s) y P99 (8.9s) es 5x. Esto indica que la degradación no es uniforme — hay un subset de requests que sufren mucho más, probablemente las que caen cuando el pool está lleno.' },
+    { title: 'Throughput insuficiente para producción', severity: 'medium', detail: 'Con 42 req/s en 100 usuarios, al escalar a 500 usuarios en un flash sale el sistema colapsaría. Se necesita al menos 2x el throughput objetivo antes de ir a producción.' }
 ];
 
-var QA_HUMAN_ACTIONS = [
-    'Verificar si los cambios de color cumplen WCAG 2.1 AA (contrast ratio >= 4.5:1)',
-    'Confirmar con producto si el cambio de idioma es intencional',
-    'Revisar el cálculo de cobertura — ¿por qué bajó de 73% a 67%?',
-    'Validar el cambio de estado de TC-003 contra los resultados reales',
-    'Ejecutar visual regression en 3+ breakpoints (mobile, tablet, desktop)',
-    'Cross-browser check: Chrome, Firefox, Safari como mínimo',
-    'Verificar que el layout shift del badge no afecte CLS (Core Web Vitals)',
-    'Documentar todos los cambios detectados para el sprint review'
+var PERF_QA_ACTIONS = [
+    'Revisar slow query logs del periodo del test — buscar queries > 1s',
+    'Verificar el tamaño del connection pool (HikariCP/PgBouncer) y comparar con max threads',
+    'Ejecutar un memory profiling (heap dump) durante otro run para confirmar leak',
+    'Correlacionar los 347 connection refused con timestamps de los errores HTTP 5xx',
+    'Repetir el test con 50 usuarios para establecer baseline de degradación',
+    'Revisar si hay cascading failures — ¿el error de /checkout afecta otros endpoints?',
+    'Validar que los datos del test representen el escenario real (think time, ramp-up, datos)',
+    'Documentar y priorizar: fix connection pool > fix memory leak > optimizar queries'
 ];
 
-function initImageCompare() {
-    var slider = document.getElementById('ic-threshold');
-    var btnDetect = document.getElementById('ic-detect');
+var PERF_CLIENT_SUMMARY = [
+    { icon: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1L1 15h14L8 1z" stroke="currentColor" stroke-width="1.5"/><path d="M8 6v4M8 12v1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>', text: 'El proceso de compra tarda entre 2 y 9 segundos en responder. Un usuario normal abandona después de 3 segundos.' },
+    { icon: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5 5l6 6M11 5l-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>', text: '1 de cada 8 intentos de compra falla completamente. Eso significa pérdida directa de ventas.' },
+    { icon: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1 4l5 4 4-6 5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'El sistema solo puede manejar la mitad del tráfico esperado. En un evento de alto tráfico (Black Friday, lanzamiento), colapsaría.' },
+    { icon: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>', text: 'Recomendación: NO salir a producción con estos números. Se requieren correcciones antes del lanzamiento.' },
+    { icon: '<svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M5 1v3M11 1v3M2 7h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>', text: 'Estimación de fix: 3-5 días de trabajo del equipo de desarrollo para los 3 problemas principales.' }
+];
 
-    if (slider) {
-        slider.addEventListener('input', updateHeatmapOpacity);
-        updateHeatmapOpacity();
+function initPerfInterpreter() {
+    var btnAnalyze = document.getElementById('perf-analyze');
+    if (btnAnalyze) {
+        btnAnalyze.addEventListener('click', analyzePerfResults);
     }
-    if (btnDetect) {
-        btnDetect.addEventListener('click', detectChanges);
-    }
-    buildHeatmapSpots();
 }
 
-function buildHeatmapSpots() {
-    var container = document.getElementById('ic-heatmap');
-    if (!container) return;
-    container.innerHTML = '';
-
-    DETECTED_CHANGES.forEach(function (change) {
-        var spot = document.createElement('div');
-        spot.className = 'heatmap-spot';
-        spot.style.left = change.x + '%';
-        spot.style.top = change.y + '%';
-        spot.style.width = change.size + 'px';
-        spot.style.height = change.size + 'px';
-        spot.style.transform = 'translate(-50%, -50%)';
-        container.appendChild(spot);
-    });
-}
-
-function updateHeatmapOpacity() {
-    var slider = document.getElementById('ic-threshold');
-    if (!slider) return;
-    var val = slider.value / 100;
-    var spots = document.querySelectorAll('.heatmap-spot');
-    spots.forEach(function (spot) { spot.style.opacity = val; });
-}
-
-function detectChanges() {
-    var resultsEl = document.getElementById('ic-results');
+function analyzePerfResults() {
+    var resultsEl = document.getElementById('perf-results');
     if (!resultsEl) return;
-    resultsEl.classList.add('active');
 
-    var listEl = document.getElementById('ic-changes-list');
-    if (listEl) {
-        listEl.innerHTML = '';
-        DETECTED_CHANGES.forEach(function (change) {
-            var severityClass = 'severity-badge--' + change.severity;
-            var severityLabel = change.severity === 'high' ? 'Alta' : (change.severity === 'medium' ? 'Media' : 'Baja');
+    /* Hide the raw metrics table and the header with the button */
+    var metricsEl = document.querySelector('.perf-demo__metrics');
+    var headerEl = document.querySelector('.perf-demo__header');
+    if (metricsEl) metricsEl.style.display = 'none';
+    if (headerEl) headerEl.style.display = 'none';
+
+    resultsEl.style.display = 'grid';
+
+    var findingsEl = document.getElementById('perf-findings');
+    if (findingsEl) {
+        findingsEl.innerHTML = '<h4 class="perf-demo__section-title"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="vertical-align: -2px; margin-right: 4px;"><path d="M8 1L1 15h14L8 1z" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M8 6v4M8 12v1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>Análisis técnico — 6 hallazgos</h4>';
+        PERF_FINDINGS.forEach(function (f) {
+            var severityClass = 'severity-badge--' + f.severity;
+            var severityLabel = f.severity === 'high' ? 'Crítico' : 'Alerta';
             var item = document.createElement('div');
             item.className = 'change-item';
-            item.innerHTML = '<span class="severity-badge ' + severityClass + '">' + severityLabel + '</span><div><span class="change-item__text">' + change.text + '</span><span class="change-item__recommendation">' + change.recommendation + '</span></div>';
-            listEl.appendChild(item);
+            item.innerHTML = '<span class="severity-badge ' + severityClass + '">' + severityLabel + '</span>'
+                + '<div><span class="change-item__text">' + f.title + '</span>'
+                + '<span class="change-item__recommendation">' + f.detail + '</span></div>';
+            findingsEl.appendChild(item);
         });
     }
 
-    var qaEl = document.getElementById('ic-qa-human');
-    if (qaEl) {
-        var html = '<h4>¿Qué haría un QA humano aquí?</h4><ul>';
-        QA_HUMAN_ACTIONS.forEach(function (action) {
-            html += '<li>' + action + '</li>';
+    var clientEl = document.getElementById('perf-client');
+    if (clientEl) {
+        clientEl.innerHTML = '<h4 class="perf-demo__section-title" style="color: var(--accent-green);"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="vertical-align: -2px; margin-right: 4px;"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 4v5l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Resumen para stakeholders</h4>';
+        PERF_CLIENT_SUMMARY.forEach(function (item) {
+            var div = document.createElement('div');
+            div.className = 'change-item';
+            div.innerHTML = '<span style="flex-shrink: 0; color: var(--accent-cyan); display: flex; align-items: center;">' + item.icon + '</span>'
+                + '<div><span class="change-item__text">' + item.text + '</span></div>';
+            clientEl.appendChild(div);
         });
-        html += '</ul>';
-        qaEl.innerHTML = html;
     }
 }
 
@@ -496,7 +484,7 @@ function init() {
 
     // Initialize interactive demos
     initPromptBuilder();
-    initImageCompare();
+    initPerfInterpreter();
 
     // Touch swipe support
     var touchX = 0;

@@ -165,7 +165,101 @@
         </div>
       </section>
 
-      <!-- ── SLIDE 5: Mitos vs Realidades ── -->
+      <!-- ── SLIDE 5: Qué se espera de un QA en 2026 ── -->
+      <section class="slide slide--section" aria-hidden="true">
+        <span class="slide__tag">Evolución</span>
+        <h2 class="slide__heading">¿Qué se espera de un QA en 2026?</h2>
+        <p
+          class="slide__text"
+          style="font-size: 0.85rem; margin-bottom: 0.8rem"
+        >
+          Análisis de <strong class="text-cyan">12 vacantes reales</strong> de
+          empresas tech (LinkedIn — Feb/Mar 2026)
+        </p>
+        <div class="slide__columns">
+          <div>
+            <h3 class="slide__subheading">Skills más pedidos</h3>
+            <table class="matrix-table" style="font-size: 0.75rem">
+              <thead>
+                <tr>
+                  <th>Skill</th>
+                  <th>Frecuencia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Automation (Playwright/Cypress/Selenium)</td>
+                  <td class="rating-high">12/12</td>
+                </tr>
+                <tr>
+                  <td>CI/CD (GitHub Actions, Jenkins, pipelines)</td>
+                  <td class="rating-high">11/12</td>
+                </tr>
+                <tr>
+                  <td>AI/LLM tools (Copilot, prompt engineering)</td>
+                  <td class="rating-high">9/12</td>
+                </tr>
+                <tr>
+                  <td>API testing (REST/GraphQL, Postman, k6)</td>
+                  <td class="rating-high">10/12</td>
+                </tr>
+                <tr>
+                  <td>Performance testing (JMeter, k6, Gatling)</td>
+                  <td class="rating-mid">7/12</td>
+                </tr>
+                <tr>
+                  <td>Docker / Kubernetes / infra básica</td>
+                  <td class="rating-mid">6/12</td>
+                </tr>
+                <tr>
+                  <td>Scripting (Python/JS/Bash)</td>
+                  <td class="rating-high">8/12</td>
+                </tr>
+                <tr>
+                  <td>Testing manual / exploratorio</td>
+                  <td class="rating-low">2/12</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <h3 class="slide__subheading">Conclusiones</h3>
+            <ul class="slide__bullets">
+              <li>
+                <span class="bullet-highlight">Manual casi extinto:</span> solo
+                2 de 12 lo mencionan (y como "nice to have")
+              </li>
+              <li>
+                <span class="bullet-highlight">Automation es el piso:</span> si
+                no automatizás, no calificás
+              </li>
+              <li>
+                <span class="bullet-highlight">IA es el diferenciador:</span>
+                75% pide experiencia con herramientas de IA
+              </li>
+              <li>
+                <span class="bullet-highlight">DevOps es el nuevo bonus:</span>
+                Docker, pipelines, infra — el QA se acerca al SRE
+              </li>
+              <li>
+                <span class="bullet-highlight"
+                  >El perfil es "QA Engineer":</span
+                >
+                no "Tester" — el título refleja la expectativa técnica
+              </li>
+            </ul>
+            <div
+              class="quote-block"
+              style="margin-top: 0.8rem; font-size: 0.85rem"
+            >
+              El QA de 2026 es un engineer que testea, no un tester que
+              programa.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SLIDE 6: Mitos vs Realidades ── -->
       <section class="slide slide--section" aria-hidden="true">
         <span class="slide__tag">Mitos vs Realidades</span>
         <h2 class="slide__heading">Lo que dicen vs lo que pasa</h2>
@@ -454,9 +548,9 @@
           <thead>
             <tr>
               <th>Criterio</th>
-              <th>GPT-4o</th>
-              <th>Claude Opus/Sonnet</th>
-              <th>Gemini Pro</th>
+              <th>GPT-5.2</th>
+              <th>Claude Opus 4.6</th>
+              <th>Gemini 2.5 Flash</th>
               <th>Modelos locales</th>
             </tr>
           </thead>
@@ -471,36 +565,36 @@
             <tr>
               <td>Costo</td>
               <td class="rating-mid">Medio</td>
-              <td class="rating-mid">Medio</td>
+              <td class="rating-low">Alto (×3)</td>
               <td class="rating-high">Bajo</td>
               <td class="rating-high">Gratis*</td>
             </tr>
             <tr>
               <td>Privacidad</td>
-              <td class="rating-mid">API/Enterprise</td>
-              <td class="rating-mid">API/Enterprise</td>
-              <td class="rating-mid">API/Enterprise</td>
+              <td class="rating-high">WPP Open</td>
+              <td class="rating-high">WPP Open</td>
+              <td class="rating-high">WPP Open</td>
               <td class="rating-high">Total</td>
             </tr>
             <tr>
               <td>Contexto</td>
-              <td class="rating-high">128K</td>
-              <td class="rating-high">200K</td>
-              <td class="rating-high">1M+</td>
+              <td class="rating-high">1M</td>
+              <td class="rating-high">1M (beta)</td>
+              <td class="rating-high">2M+</td>
               <td class="rating-low">8-32K</td>
             </tr>
             <tr>
               <td>Velocidad</td>
               <td class="rating-high">Rápido</td>
-              <td class="rating-mid">Medio</td>
+              <td class="rating-low">Lento</td>
               <td class="rating-high">Rápido</td>
               <td class="rating-low">Variable</td>
             </tr>
           </tbody>
         </table>
         <p class="text-muted mt-1" style="font-size: 0.8rem">
-          * Costo de hardware. La tabla es referencial — los modelos evolucionan
-          constantemente.
+          * Costo de hardware. Todos los modelos cloud disponibles vía
+          <strong>WPP Open</strong> con filtros de seguridad enterprise.
         </p>
       </section>
 
@@ -510,15 +604,16 @@
         <h2 class="slide__heading">Reglas de decisión</h2>
         <ul class="slide__bullets">
           <li>
-            <span class="bullet-highlight">Datos sensibles →</span> Modelo local
-            (Ollama) o API enterprise con DPA
+            <span class="bullet-highlight">Datos sensibles →</span> Solo vía WPP
+            Open (filtros de seguridad enterprise)
             <span class="bullet-detail"
-              >Nunca mandar datos reales de clientes a APIs públicas</span
+              >En VML, toda IA con datos de clientes pasa por WPP Open — nunca
+              APIs públicas directas</span
             >
           </li>
           <li>
             <span class="bullet-highlight">Razonamiento complejo →</span> Modelo
-            grande (GPT-4o, Claude Opus)
+            grande (GPT-5.2, Claude Opus 4.6)
             <span class="bullet-detail"
               >Para análisis profundo de specs, edge cases complejos</span
             >
@@ -826,9 +921,13 @@ Bloquea cuenta tras 5 intentos fallidos.</textarea
               <li>Setup y mantenimiento adicional</li>
             </ul>
             <p class="slide__text mt-1">
-              <strong class="text-cyan">Cuándo usarlos:</strong> datos
-              sensibles, compliance estricto, prototipado rápido, ambientes
-              air-gapped.
+              <strong class="text-cyan">Cuándo usarlos:</strong> prototipado
+              rápido, ambientes air-gapped, experimentación offline.
+            </p>
+            <p class="slide__text mt-1" style="font-size: 0.85rem">
+              <strong class="text-cyan">En VML:</strong> para datos sensibles,
+              usamos <strong>WPP Open</strong> — acceso a GPT-5.2, Claude y
+              Gemini con filtros de seguridad enterprise.
             </p>
           </div>
         </div>
@@ -919,89 +1018,146 @@ Bloquea cuenta tras 5 intentos fallidos.</textarea
         </div>
       </section>
 
-      <!-- ── SLIDE 22: DEMO — Comparación Visual ── -->
+      <!-- ── SLIDE 22: DEMO — Interpretador de Performance Test ── -->
       <section class="slide slide--demo" aria-hidden="true">
         <span class="slide__tag">Demo interactivo</span>
         <h2 class="slide__heading" style="margin-bottom: 0.5rem">
-          Comparación Visual: IA en QA Visual
+          Interpretador de Resultados: Performance Testing
         </h2>
-        <div class="image-compare">
-          <div class="image-compare__header">
-            <div>
-              <span class="image-compare__label">Baseline vs Candidate</span>
-            </div>
-            <div class="image-compare__slider-group">
-              <label for="ic-threshold">Diff threshold:</label>
-              <input
-                type="range"
-                class="image-compare__slider"
-                id="ic-threshold"
-                min="0"
-                max="100"
-                value="60"
-                aria-label="Ajustar threshold de diferencias"
-              />
-              <span
-                id="ic-threshold-val"
-                style="
-                  font-size: 0.8rem;
-                  color: var(--text-muted);
-                  min-width: 2.5em;
-                "
-                >60%</span
-              >
-            </div>
+        <div class="perf-demo">
+          <div class="perf-demo__header">
+            <span class="perf-demo__label"
+              >Resultados JMeter — API /checkout (100 usuarios, 5 min)</span
+            >
             <button
               class="demo-btn demo-btn--primary"
-              id="ic-detect"
-              aria-label="Detectar cambios"
+              id="perf-analyze"
+              aria-label="Analizar con IA"
             >
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <circle
-                  cx="7"
-                  cy="7"
-                  r="5"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
                 <path
-                  d="M11 11l4 4"
+                  d="M8 1v6l4 2"
                   stroke="currentColor"
                   stroke-width="2"
                   stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <circle
+                  cx="8"
+                  cy="8"
+                  r="7"
+                  stroke="currentColor"
+                  stroke-width="2"
                 />
               </svg>
-              Detectar cambios
+              Analizar con IA
             </button>
           </div>
-          <div class="image-compare__img-wrap">
-            <span
-              class="image-compare__label"
-              style="position: absolute; top: 8px; left: 10px; z-index: 2"
-              >Baseline</span
-            >
-            <img
-              src="assets/baseline.png"
-              alt="Screenshot baseline de la aplicación"
-              loading="lazy"
-            />
+
+          <!-- Raw metrics table -->
+          <div class="perf-demo__metrics">
+            <table class="matrix-table" style="margin: 0">
+              <thead>
+                <tr>
+                  <th>Métrica</th>
+                  <th>Valor</th>
+                  <th>Umbral</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Avg Response Time</td>
+                  <td style="font-family: var(--font-mono)">1,847 ms</td>
+                  <td style="font-family: var(--font-mono)">&lt; 500 ms</td>
+                  <td>
+                    <span class="severity-badge severity-badge--high"
+                      >CRÍTICO</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>P95 Response Time</td>
+                  <td style="font-family: var(--font-mono)">4,312 ms</td>
+                  <td style="font-family: var(--font-mono)">&lt; 2,000 ms</td>
+                  <td>
+                    <span class="severity-badge severity-badge--high"
+                      >CRÍTICO</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>P99 Response Time</td>
+                  <td style="font-family: var(--font-mono)">8,921 ms</td>
+                  <td style="font-family: var(--font-mono)">&lt; 5,000 ms</td>
+                  <td>
+                    <span class="severity-badge severity-badge--high"
+                      >CRÍTICO</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Throughput</td>
+                  <td style="font-family: var(--font-mono)">42 req/s</td>
+                  <td style="font-family: var(--font-mono)">&gt; 80 req/s</td>
+                  <td>
+                    <span class="severity-badge severity-badge--medium"
+                      >ALERTA</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Error Rate</td>
+                  <td style="font-family: var(--font-mono)">12.3%</td>
+                  <td style="font-family: var(--font-mono)">&lt; 1%</td>
+                  <td>
+                    <span class="severity-badge severity-badge--high"
+                      >CRÍTICO</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Avg CPU (server)</td>
+                  <td style="font-family: var(--font-mono)">89%</td>
+                  <td style="font-family: var(--font-mono)">&lt; 70%</td>
+                  <td>
+                    <span class="severity-badge severity-badge--medium"
+                      >ALERTA</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Avg Memory</td>
+                  <td style="font-family: var(--font-mono)">3.2 GB / 4 GB</td>
+                  <td style="font-family: var(--font-mono)">&lt; 80%</td>
+                  <td>
+                    <span class="severity-badge severity-badge--medium"
+                      >ALERTA</span
+                    >
+                  </td>
+                </tr>
+                <tr>
+                  <td>Connections Refused</td>
+                  <td style="font-family: var(--font-mono)">347</td>
+                  <td style="font-family: var(--font-mono)">0</td>
+                  <td>
+                    <span class="severity-badge severity-badge--high"
+                      >CRÍTICO</span
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="image-compare__img-wrap">
-            <span
-              class="image-compare__label"
-              style="position: absolute; top: 8px; left: 10px; z-index: 2"
-              >Candidate</span
-            >
-            <img
-              src="assets/candidate.png"
-              alt="Screenshot candidato con cambios"
-              loading="lazy"
-            />
-            <div class="image-compare__heatmap" id="ic-heatmap"></div>
-          </div>
-          <div class="image-compare__results" id="ic-results">
-            <div class="changes-list" id="ic-changes-list"></div>
-            <div class="qa-human-box" id="ic-qa-human"></div>
+
+          <!-- AI Analysis (hidden until button click) -->
+          <div
+            class="perf-demo__analysis"
+            id="perf-results"
+            style="display: none"
+          >
+            <div class="perf-demo__findings" id="perf-findings"></div>
+            <div class="perf-demo__findings" id="perf-client"></div>
           </div>
         </div>
       </section>
@@ -1055,8 +1211,10 @@ Bloquea cuenta tras 5 intentos fallidos.</textarea
                 nunca confiar ciegamente
               </li>
               <li>
-                <span class="bullet-highlight">Nunca datos sensibles</span> a
-                APIs públicas sin DPA
+                <span class="bullet-highlight"
+                  >Datos sensibles solo vía WPP Open</span
+                >
+                — nunca APIs públicas directas
               </li>
               <li>
                 <span class="bullet-highlight"
