@@ -104,6 +104,20 @@ body {
   overflow: hidden;
 }
 
+/* ── Author Footer ── */
+.author-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  pointer-events: none;
+  opacity: 0.9;
+  z-index: 120;
+}
+
 /* ── Individual Slide ── */
 .slide {
   position: absolute;
